@@ -3,6 +3,6 @@ import { getUserProfile } from "../controller/controller";
 
 const route = Router();
 
-route.get("/get_user_profile", getUserProfile);
+route.get("/api", getUserProfile);
 
 export default route;

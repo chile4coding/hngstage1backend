@@ -31,7 +31,8 @@ export const getUserProfile = expressAsyncHandler(
       res.status(StatusCodes.OK).json({
         slack_name: slackName.replace("_", " "),
         current_day: weekDays[weekDay],
-        utc_time: utcDate >= lBound && utcDate <= upBound ? utcDate : "",
+        utc_time:
+          utcDate >= lBound && utcDate <= upBound ? utcDate.toISOString() : "",
         track: track,
         github_file_url: github_file_url,
         github_repo_url: github_repo_url,

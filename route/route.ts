@@ -3,6 +3,6 @@ import { getUserProfile } from "../controller/controller";
 
 const route = Router();
 
-route.get("/get_user_profile/:slack_name/:track", getUserProfile);
+route.get("/get_user_profile", getUserProfile);
 
 export default route;

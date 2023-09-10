@@ -6,7 +6,8 @@ export const getUserProfile = expressAsyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       //get slack name and track from the request params
-      const { slack_name, track } = req.params;
+      const { track } = req.query;
+      const slackName: string | any = req.query.slack_name;
       //   create an array of days
       const weekDays = [
         "Sunday",
@@ -28,7 +29,7 @@ export const getUserProfile = expressAsyncHandler(
       const lBound = new Date(currentTime - refTime);
       const upBound = new Date(currentTime + refTime);
       res.status(StatusCodes.OK).json({
-        slack_name: slack_name,
+        slack_name: slackName.replace("_", " "),
         current_day: weekDays[weekDay],
         utc_time: utcDate >= lBound && utcDate <= upBound ? utcDate : "",
         track: track,

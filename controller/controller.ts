@@ -23,7 +23,16 @@ export const getUserProfile = expressAsyncHandler(
       const github_file_url: string =
         "https://github.com/chile4coding/hngstage1backend/blob/main/controller/controller.ts";
       const refTime: number = 120000;
-      const utcDate: any = new Date();
+      const utcDate: any = new Date(  );
+
+     const year = utcDate.getUTCFullYear();
+     const month = (utcDate.getUTCMonth() + 1).toString().padStart(2, "0"); // Month is zero-based
+     const day = utcDate.getUTCDate().toString().padStart(2, "0");
+     const hours = utcDate.getUTCHours().toString().padStart(2, "0");
+     const minutes = utcDate.getUTCMinutes().toString().padStart(2, "0");
+     const seconds = utcDate.getUTCSeconds().toString().padStart(2, "0");
+
+     const formattedUTCString = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
       const weekDay = utcDate.getUTCDay();
       const currentTime = utcDate.getTime();
       const lBound = new Date(currentTime - refTime);
@@ -32,7 +41,7 @@ export const getUserProfile = expressAsyncHandler(
         slack_name: slackName.replace("_", " "),
         current_day: weekDays[weekDay],
         utc_time:
-          utcDate >= lBound && utcDate <= upBound ? utcDate.toISOString() : "",
+          utcDate >= lBound && utcDate <= upBound ? formattedUTCString: "",
         track: track,
         github_file_url: github_file_url,
         github_repo_url: github_repo_url,

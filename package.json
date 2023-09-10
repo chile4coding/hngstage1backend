@@ -1,0 +1,19 @@
+{
+  "name": "hngstage1backend",
+  "version": "1.0.0",
+  "description": "this is HNG internship program backend stage one prloject",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chile4coding/hngstage1backend.git"
+  },
+  "author": "Chile Omereji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chile4coding/hngstage1backend/issues"
+  },
+  "homepage": "https://github.com/chile4coding/hngstage1backend#readme"
+}

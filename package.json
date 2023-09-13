@@ -33,6 +33,7 @@
     "express-validator": "^7.0.1",
     "http-status-codes": "^2.2.0",
     "node": "^18.14.0",
+    "mongoose": "^7.4.1",
     "statuscode": "^0.0.0"
   },
   "devDependencies": {

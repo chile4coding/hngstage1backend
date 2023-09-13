@@ -22,7 +22,10 @@ app.use((error: any, req: Request, res: Response, next: NextFunction) => {
 });
 
 async function mongooseConnect() {
-  await connect(process.env.URl||"");
+  await connect(
+    process.env.URl ||
+      " mongodb+srv://recommender-system:recommender12345@cluster0.jv9eo4u.mongodb.net/HNGX?retryWrites=true&w=majority"
+  );
 }
 app.listen(PORT, () => {
   mongooseConnect().then(() => {
